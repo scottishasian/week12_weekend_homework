@@ -12,12 +12,17 @@ const app = function(){
     ul.innerHTML = "";
     p.innerHTML = "";
     const li = document.createElement("li");
+    const img = document.createElement("img")
     const para = document.createElement("p");
     const para2 = document.createElement("p");
+    const para3 = document.createElement("p");
     li.innerText = "Name: " + countries[this.value].name
     para.innerText = "Population: " + countries[this.value].population
     para2.innerText = "Sub-Region: " + countries[this.value].subregion
+    para2.innerText = "Region-Bloc: " + countries[this.value].regionalBlocs.name
+    img.src = countries[this.value].flag;
     ul.appendChild(li);
+    ul.appendChild(img);
     p.appendChild(para);
     p.appendChild(para2);
 
@@ -69,6 +74,15 @@ const handlSelectChange = function(countries) {
 //   p.appendChild(para2);
 //   }
 
+
+// const regionBlock = function(countries) {
+//   countries.forEach(function(country){
+//     country.regionalBlocs.forEach(item){
+//       item.name;
+//     }
+//   })
+//
+// }
 }
 
 document.addEventListener('DOMContentLoaded', app);
